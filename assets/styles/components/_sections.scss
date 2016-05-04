@@ -1,0 +1,7 @@
+// Sections
+// ---------
+.section {
+    @include min-screen($desktop) {
+        padding: 80px 0;
+    }
+}

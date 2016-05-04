@@ -16,6 +16,10 @@
     text-decoration: underline;
 }
 
+.u--text-uppercase {
+    text-transform: uppercase;
+}
+
 .u--clear-fix {
     &::after {
         content: '';
