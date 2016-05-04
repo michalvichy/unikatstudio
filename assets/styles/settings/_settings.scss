@@ -1,0 +1,28 @@
+// Grid
+// -----
+$gutter: 0;
+$push: true;
+$pull: true;
+
+// Breakpoints
+// -----------
+$phone: 320px;
+$tablet-small: 640px;
+$tablet: 767px;
+$tablet-wide: 960px;
+$desktop: 1025px;
+$desktop-medium: 1280px;
+$desktop-wide: 1440px;
+
+
+$breakpoints: (
+    'phone' '(min-width: #{$phone})',
+    'tablet' '(min-width: #{$tablet})',
+    'desktop' '(min-width: #{$desktop})',
+    'desktop-medium' '(min-width: #{$desktop-medium})',
+    'desktop-wide' '(min-width: #{$desktop-wide})'
+);
+
+$breakpoint-has-widths: ('phone', 'tablet', 'desktop', 'desktop-medium', 'desktop-wide');
+$breakpoint-has-push: ('phone', 'tablet', 'desktop', 'desktop-medium', 'desktop-wide');
+$breakpoint-has-pull: ('phone', 'tablet', 'desktop', 'desktop-medium', 'desktop-wide');

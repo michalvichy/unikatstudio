@@ -1,0 +1,31 @@
+// Utilities
+// ---------
+.u--align-left {
+    text-align: left;
+}
+
+.u--align-right {
+    text-align: right;
+}
+
+.u--align-center {
+    text-align: center;
+}
+
+.u--text-underline {
+    text-decoration: underline;
+}
+
+.u--clear-fix {
+    &::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+.u--image-responsive {
+    display: block;
+    width: 100%;
+    height: auto;
+}

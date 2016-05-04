@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/*.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "vendor.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://local.wordpress.dev/"
+  }
+}
