@@ -39,7 +39,7 @@ add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\remove_js_from_header');
 
 
 function customize_menu_item_class($classes, $item) {
-    $classes = ['Nav-item', 'List-item', 'Item--' . $item -> ID, 'Item--' . sanitize_title($item -> title)];
+    $classes = ['nav__item', 'list__item', 'item--' . $item -> ID, 'item--' . sanitize_title($item -> title)];
 
     if($item -> current) {
         $classes[] = 'is-current';
