@@ -10,7 +10,6 @@ var gulpif       = require('gulp-if');
 var imagemin     = require('gulp-imagemin');
 var jshint       = require('gulp-jshint');
 var lazypipe     = require('lazypipe');
-var less         = require('gulp-less');
 var merge        = require('merge-stream');
 var cssNano      = require('gulp-cssnano');
 var plumber      = require('gulp-plumber');
@@ -69,8 +68,9 @@ var revManifest = path.dist + 'assets.json';
 
 var sassPaths = [
     '.',
-    'node_modules/normalize-scss/node_modules/support-for/sass',
+    'node_modules/support-for/sass',
     'node_modules/normalize-scss/sass',
+    'node_modules/sass-mediaqueries',
     'node_modules/sass-mediaqueries',
     'bower_components/csswizardry-grids'
 ];
@@ -92,9 +92,6 @@ var cssTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.init());
-    })
-    .pipe(function() {
-      return gulpif('*.less', less());
     })
     .pipe(function() {
       return gulpif('*.scss', sass({
