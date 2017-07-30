@@ -14,7 +14,14 @@ $text-color-dark: #484848;
 $text-color-light: #b8b3b0;
 $color-creame: #f7f7f7;
 $lightgray: #dedede;
+$gray: #f7f7f7;
 
 // Sizes
 // ------
 $container-width: 1140px;
+
+// Animations
+// ----------
+$base-animation-time: 320ms;
+$image-hover-animation: cubic-bezier(.23, 1, .32, 1);
+$cubic-transition: cubic-bezier(.25, .8, .25, 1);

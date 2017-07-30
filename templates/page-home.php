@@ -25,6 +25,47 @@
 <section class="o-section">
     <div class="o-container">
         <h2 class="c-headline">Pracownicy</h2>
+        <div class="c-employees js-tab">
+            <div class="c-employees__head">
+                <?php
+                    $args = array(
+                        'post_type' => 'unikat_employee',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'orderby' => 'date',
+                        'order' => 'ASC'
+                    );
+
+                    $query = new WP_Query($args);
+
+                    if ( $query->have_posts() ) :
+                        $i = 0;
+                        while ( $query->have_posts() ) : $query->the_post();
+                            $post_id = $post->ID;
+                            $title = get_the_title($post_id);
+                            $content = get_the_content();
+                            $img_url = get_the_post_thumbnail_url();
+                ?><!--
+                --><div class="c-employee__avatar js-tab-item <?= $i === 0 ? 'active' : '' ?>" data-target="#employee-<?= $i ?>">
+                    <div class="c-employee__avatar-img" style="background-image: url('<?= $img_url ?>')"></div>
+                    <p><?= $title; ?></p>
+                </div><!--
+            --><?php $i++; endwhile; endif; ?>
+            </div>
+            <div class="c-employees__body">
+                <?php
+                if ( $query->have_posts() ) :
+                    $i = 0;
+                    while ( $query->have_posts() ) : $query->the_post();
+                        $post_id = $post->ID;
+                        $content = get_the_content();
+                ?>
+                <div id="employee-<?= $i ?>" class="c-employee__desc js-tab-target <?= $i === 0 ? 'active' : '' ?>">
+                    <?= $content ?>
+                </div>
+            <?php wp_reset_query(); $i++; endwhile; endif; ?>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -57,4 +98,3 @@
 <footer class="c-footer tablet--">
 
 </footer>
-

@@ -1,0 +1,53 @@
+// Employees
+// ---------
+.c-employees {
+
+}
+
+.c-employees__head {
+  border-bottom: 1px solid $gray;
+}
+
+.c-employee__avatar {
+  display: inline-block;
+  width: 20%;
+  padding: 15px 10px;
+  transition: background-color $base-animation-time $image-hover-animation;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    background-color: #f7f7f7;
+  }
+}
+
+.c-employee__avatar-img {
+  @include square(180px);
+  margin: 0 auto;
+  transition: transform 2s $image-hover-animation;
+  border-radius: 50%;
+  background: {
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.c-employees__body {
+  position: relative;
+}
+
+.c-employee__desc {
+  display: none;
+  max-width: 600px;
+  margin: 20px auto;
+
+  &.active {
+    display: block;
+  }
+}

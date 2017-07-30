@@ -70,4 +70,28 @@ window.US.common = function($) {
       }
     });
   }
+
+  function tabs() {
+    var $tabs = $('.js-tab');
+
+    $tabs.each(function(index, tab) {
+      console.log(tab);
+      var $tabItems = $(tab).find('.js-tab-item');
+      var $tabTargets = $(tab).find('.js-tab-target');
+
+      $tabItems.on('click', function() {
+        var $this = $(this);
+        var $target = $($this.data('target'));
+
+        $tabItems.removeClass('active');
+        $tabTargets.removeClass('active');
+        $this.addClass('active');
+        $target.addClass('active');
+      });
+    });
+  }
+
+  $(document).ready(function() {
+    tabs();
+  });
 };
