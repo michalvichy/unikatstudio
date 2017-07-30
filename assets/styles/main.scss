@@ -1,15 +1,17 @@
 // Reset browser styles
 @import '../../node_modules/normalize-scss/fork-versions/default/normalize';
 
-@import 'media-queries';
-@import 'csswizardry-grids';
-
 // Theme settings
 @import 'settings/fonts';
 @import 'settings/mixins';
 @import 'settings/units';
 @import 'settings/vars';
 @import 'settings/settings';
+
+// Vendors
+@import 'media-queries';
+@import 'csswizardry-grids';
+
 
 // Global styles
 @import 'common/global';
@@ -27,3 +29,4 @@
 @import 'components/header';
 @import 'components/headlines';
 @import 'components/paragraphs';
+@import 'components/services';

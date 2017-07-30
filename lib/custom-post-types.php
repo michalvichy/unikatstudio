@@ -42,39 +42,38 @@
         /**
          * Register a gallery post type.
          */
-//        $labels_gallery = array(
-//            'name'               => 'Galeria',
-//            'singular_name'      => 'Galeria',
-//            'menu_name'          => 'Galeria',
-//            'name_admin_bar'     => 'Galeria',
-//            'add_new'            => 'Nowy album',
-//            'add_new_item'       => 'Dodaj nowy album',
-//            'new_item'           => 'Nowy album',
-//            'edit_item'          => 'Edytuj album',
-//            'view_item'          => 'Zobacz album',
-//            'all_items'          => 'Wszystkie albumy',
-//            'search_items'       => 'Wyszukaj albumy',
-//            'parent_item_colon'  => 'Nadrzędne albumy:',
-//            'not_found'          => 'Nie znaleziono albumu',
-//            'not_found_in_trash' => 'Nie znaleziono albumu w koszu'
-//        );
-//
-//        $args = array(
-//            'labels'             => $labels_gallery,
-//            'public'             => true,
-//            'publicly_queryable' => true,
-//            'show_ui'            => true,
-//            'show_in_menu'       => true,
-//            'query_var'          => true,
-//            'rewrite'            => array( 'slug' => 'gallery' ),
-//            'capability_type'    => 'post',
-//            'has_archive'        => true,
-//            'hierarchical'       => false,
-//            'menu_position'      => null,
-//            'supports'           => array('title'),
-//            'menu_icon'          => 'dashicons-format-gallery'
-//        );
-//
-//        register_post_type( 'ak_gallery', $args );
+       $labels_services = array(
+           'name'               => 'Usługi',
+           'singular_name'      => 'Usługa',
+           'menu_name'          => 'Usługi',
+           'name_admin_bar'     => 'Usługi',
+           'add_new'            => 'Nowa usługa',
+           'add_new_item'       => 'Dodaj nową usługę',
+           'new_item'           => 'Nowa usługa',
+           'edit_item'          => 'Edytuj usługę',
+           'view_item'          => 'Zobacz usługę',
+           'all_items'          => 'Wszystkie usługi',
+           'search_items'       => 'Wyszukaj usługi',
+           'parent_item_colon'  => 'Nadrzędna usługa:',
+           'not_found'          => 'Nie znaleziono usługi',
+           'not_found_in_trash' => 'Nie znaleziono usługi w koszu'
+       );
+
+       $args = array(
+           'labels'             => $labels_services,
+           'public'             => true,
+           'publicly_queryable' => true,
+           'show_ui'            => true,
+           'show_in_menu'       => true,
+           'query_var'          => true,
+           'capability_type'    => 'post',
+           'has_archive'        => true,
+           'hierarchical'       => false,
+           'menu_position'      => null,
+           'supports'           => array('title', 'editor'),
+           'menu_icon'          => 'dashicons-awards'
+       );
+
+       register_post_type( 'unikat_services', $args );
     }
 ?>

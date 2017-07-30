@@ -72,6 +72,49 @@
 <section class="o-section o-section--dark">
     <div class="o-container">
         <h2 class="c-headline c-headline--white">Usługi</h2>
+        <div class="c-services js-tab">
+            <div class="grid">
+                <div class="grid__item desk--one-third">
+                    <div class="c-services__head">
+                        <?php
+                            $args = array(
+                                'post_type' => 'unikat_services',
+                                'post_status' => 'publish',
+                                'posts_per_page' => -1,
+                                'orderby' => 'date',
+                                'order' => 'ASC'
+                            );
+                            $query = new WP_Query($args);
+                            if ( $query->have_posts() ) :
+                                $i = 0;
+                                while ( $query->have_posts() ) : $query->the_post();
+                                    $post_id = $post->ID;
+                                    $name = get_the_title();
+                        ?>
+                        <div class="c-service__name js-tab-item <?= $i === 0 ? 'active' : '' ?>" data-target="#service-<?= $i ?>">
+                            <span><?= $name; ?></span>
+                        </div>
+                        <?php $i++; endwhile; endif; ?>
+                    </div>
+
+                </div><!--
+                --><div class="grid__item desk--two-thirds">
+                    <div class="c-services__body">
+                        <?php
+                        if ( $query->have_posts() ) :
+                            $i = 0;
+                            while ( $query->have_posts() ) : $query->the_post();
+                                $post_id = $post->ID;
+                                $content = get_the_content();
+                        ?>
+                            <div id="service-<?= $i ?>" class="c-service__desc js-tab-target <?= $i === 0 ? 'active' : '' ?>">
+                                <?= $content ?>
+                            </div>
+                        <?php wp_reset_query(); $i++; endwhile; endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

@@ -1,0 +1,60 @@
+// Services
+// --------
+.c-services {
+
+}
+
+.c-services__head {
+  padding: 10px 15px 30px;
+
+  @include min-screen($desktop) {
+    padding: 10px 15px;
+    border-right: 1px solid $color-secondary;
+  }
+}
+
+.c-service__name {
+  transition: color $base-animation-time $cubic-transition;
+  text-align: center;
+  cursor: pointer;
+
+  @include min-screen($desktop) {
+    text-align: right;
+  }
+
+  & + & {
+    margin-top: 10px;
+  }
+
+  &:hover,
+  &.active {
+    span {
+      background-color: $color-secondary;
+      color: $white;
+    }
+  }
+
+  span {
+    display: inline-block;
+    padding: 6px 10px;
+    transition: all $base-animation-time $cubic-transition;
+    color: $text-color-light;
+    will-change: color, background-color;
+  }
+}
+
+.c-service__desc {
+  display: none;
+  color: $text-color-light;
+
+  &.active {
+    display: block;
+  }
+
+  h3 {
+    margin-top: 0;
+    color: $white;
+    font-family: 'Lato';
+    font-size: 24px;
+  }
+}

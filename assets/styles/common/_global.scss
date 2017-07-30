@@ -12,7 +12,10 @@ html {
   font-size: $global-font-size;
   font-weight: $base-font-weight;
   box-sizing: border-box;
-  overflow-x: scroll;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {
@@ -20,6 +23,21 @@ a {
 }
 
 img {
-  display: block;
+  // display: block;
   max-width: 100%;
+
+  &.alignright {
+    margin: 0 0 1em 1em;
+    float: right;
+  }
+
+  &.alignleft {
+    margin: 0 1em 1em 0;
+    float: left;
+  }
+
+  &.aligncenter {
+    display: block;
+    margin: 20px auto;
+  }
 }
