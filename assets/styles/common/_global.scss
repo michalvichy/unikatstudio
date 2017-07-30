@@ -1,1 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
+html {
+  position: relative;
+  height: 100%;
+  color: $color-dark;
+  font-family: $base-font-family;
+  font-size: $global-font-size;
+  font-weight: $base-font-weight;
+  box-sizing: border-box;
+  overflow-x: scroll;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

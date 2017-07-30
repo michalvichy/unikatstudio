@@ -1,0 +1,31 @@
+// Buttons
+// --------
+
+@mixin btn() {
+  display: inline-block;
+  padding: 6px 20px;
+  transition: background 350ms ease-in-out;
+  border: 0;
+  background-color: transparent;
+  outline: 0;
+  line-height: 1;
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.c-btn {
+  @include btn();
+}
+
+.c-btn--primary {
+  background-color: $color-secondary;
+  color: $white;
+}

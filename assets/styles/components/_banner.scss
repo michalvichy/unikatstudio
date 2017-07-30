@@ -1,0 +1,11 @@
+// Banner
+// -------
+.c-banner {
+  height: 510px;
+  background: {
+    image: url('../images/banner.jpg');
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  };
+}

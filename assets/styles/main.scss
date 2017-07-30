@@ -1,13 +1,11 @@
 // Reset browser styles
 @import '../../node_modules/normalize-scss/fork-versions/default/normalize';
 
-// Media queries
 @import 'media-queries';
-
-// Grid
 @import 'csswizardry-grids';
 
 // Theme settings
+@import 'settings/fonts';
 @import 'settings/mixins';
 @import 'settings/units';
 @import 'settings/vars';
@@ -17,9 +15,14 @@
 @import 'common/global';
 @import 'common/utilities';
 
-// Components
-@import 'components/buttons';
+// Objects
+@import 'objects/containers';
+@import 'objects/sections';
 
-// Layouts
-@import 'layouts/header';
-@import 'layouts/footer';
+// Components
+@import 'components/banner';
+@import 'components/buttons';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/headlines';
+@import 'components/paragraphs';

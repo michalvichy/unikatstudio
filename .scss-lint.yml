@@ -12,7 +12,7 @@ linters:
     enabled: true
     allow_non_nested_indentation: false
     character: space
-    width: 4
+    width: 2
 
   NestingDepth:
     max_depth: 3

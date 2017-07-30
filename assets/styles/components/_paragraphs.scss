@@ -1,0 +1,10 @@
+// Paragraphs
+// -----------
+.c-paragraph {
+  font-size: 16px;
+  line-height: 22px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}

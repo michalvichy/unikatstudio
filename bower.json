@@ -7,13 +7,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "3.3.6",
     "jquery": "~2.2.1",
     "csswizardry-grids": "~2.2.0"
   },
   "overrides": {
-    "bootstrap-sass": {
-      "main": []
-    }
+
   }
 }

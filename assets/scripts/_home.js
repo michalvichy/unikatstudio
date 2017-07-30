@@ -1,3 +1,3 @@
-window.SS = window.SS || {};
+window.US = window.US || {};
 
-window.SS.home = function($) {};
+window.US.home = function($) {};

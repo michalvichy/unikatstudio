@@ -1,73 +1,73 @@
-window.SS = window.SS || {};
+window.US = window.US || {};
 
-window.SS.common = function($) {
-    function goToTopButton() {
-        var $button = $('.js-to-top');
+window.US.common = function($) {
+  function goToTopButton() {
+    var $button = $('.js-to-top');
 
-        $(window).on('scroll', function() {
-            if ($(this).scrollTop() >= 150) {
-                $button.addClass('is-visible');
-            } else {
-                $button.removeClass('is-visible');
-            }
-        });
+    $(window).on('scroll', function() {
+      if ($(this).scrollTop() >= 150) {
+        $button.addClass('is-visible');
+      } else {
+        $button.removeClass('is-visible');
+      }
+    });
 
-        $button.on('click', function() {
-            $('html, body').stop().animate({ scrollTop: 0 }, 'slow');
-        });
+    $button.on('click', function() {
+      $('html, body').stop().animate({ scrollTop: 0 }, 'slow');
+    });
+  }
+
+  function setCookie(cookieName, value, daysLeft) {
+    var expireDate = new Date();
+
+    expireDate.setDate(expireDate.getDate() + daysLeft);
+
+    var cookieValue = escape(value) + ((daysLeft === null) ? '' : '; expires=' + expireDate.toUTCString());
+
+    document.cookie = cookieName + '=' + cookieValue;
+  }
+
+  function getCookie(cookieName) {
+    var cookie = document.cookie;
+    var cookieStart = cookie.indexOf(' ' + cookieName + '=');
+
+    if (cookieStart === -1) {
+      cookieStart = cookie.indexOf(cookieName + '=');
     }
 
-    function setCookie(cookieName, value, daysLeft) {
-        var expireDate = new Date();
+    if (cookieStart === -1) {
+      cookie = null;
+    } else {
+      cookieStart = cookie.indexOf('=', cookieStart) + 1;
 
-        expireDate.setDate(expireDate.getDate() + daysLeft);
+      var cookieEnd = cookie.indexOf(';', cookieStart);
 
-        var cookieValue = escape(value) + ((daysLeft === null) ? '' : '; expires=' + expireDate.toUTCString());
+      if (cookieEnd === -1) {
+        cookieEnd = cookie.length;
+      }
 
-        document.cookie = cookieName + '=' + cookieValue;
+      cookie = unescape(cookie.substring(cookieStart, cookieEnd));
     }
 
-    function getCookie(cookieName) {
-        var cookie = document.cookie;
-        var cookieStart = cookie.indexOf(' ' + cookieName + '=');
+    return cookie;
+  }
 
-        if (cookieStart === -1) {
-            cookieStart = cookie.indexOf(cookieName + '=');
-        }
+  function cookiesInfo($elem) {
+    var cookie = getCookie(cookieUser);
 
-        if (cookieStart === -1) {
-            cookie = null;
-        } else {
-            cookieStart = cookie.indexOf('=', cookieStart) + 1;
-
-            var cookieEnd = cookie.indexOf(';', cookieStart);
-
-            if (cookieEnd === -1) {
-                cookieEnd = cookie.length;
-            }
-
-            cookie = unescape(cookie.substring(cookieStart, cookieEnd));
-        }
-
-        return cookie;
+    if (cookie === null) {
+      $elem.show();
     }
 
-    function cookiesInfo($elem) {
-        var cookie = getCookie(cookieUser);
-
-        if (cookie === null) {
-            $elem.show();
-        }
-
-        $elem.on('click', function(e) {
-            var target  = $(e.target);
-            if (target.is('a')) {
-                return true;
-            } else {
-                e.preventDefault();
-                setCookie(cookieUser, 1, 500);
-                $elem.fadeOut('slow');
-            }
-        });
-    }
+    $elem.on('click', function(e) {
+      var target  = $(e.target);
+      if (target.is('a')) {
+        return true;
+      } else {
+        e.preventDefault();
+        setCookie(cookieUser, 1, 500);
+        $elem.fadeOut('slow');
+      }
+    });
+  }
 };

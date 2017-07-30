@@ -1,0 +1,26 @@
+.c-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 20px 0;
+  background-color: $color-primary;
+  color: $text-color-light;
+}
+
+.c-nav {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.c-nav__item {
+  display: inline-block;
+}
+
+.c-nav__link {
+  display: block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+}

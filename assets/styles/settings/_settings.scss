@@ -16,11 +16,11 @@ $desktop-wide: 1440px;
 
 
 $breakpoints: (
-    'phone' '(min-width: #{$phone})',
-    'tablet' '(min-width: #{$tablet})',
-    'desktop' '(min-width: #{$desktop})',
-    'desktop-medium' '(min-width: #{$desktop-medium})',
-    'desktop-wide' '(min-width: #{$desktop-wide})'
+  'phone' '(min-width: #{$phone})',
+  'tab' '(min-width: #{$tablet})',
+  'desk' '(min-width: #{$desktop})',
+  'desk-medium' '(min-width: #{$desktop-medium})',
+  'desk-wide' '(min-width: #{$desktop-wide})'
 );
 
 $breakpoint-has-widths: ('phone', 'tablet', 'desktop', 'desktop-medium', 'desktop-wide');
