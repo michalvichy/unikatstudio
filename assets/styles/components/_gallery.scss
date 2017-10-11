@@ -1,0 +1,27 @@
+// Gallery
+// -------
+.c-gallery {
+
+}
+
+.c-gallery__item {
+  text-decoration: none;
+}
+
+.c-gallery__item-img {
+  width: 100%;
+  height: 250px;
+  background: {
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+}
+
+.c-gallery__item-title {
+  margin: 8px 0;
+  color: #797979;
+  font-size: 20px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  text-align: center;
+}

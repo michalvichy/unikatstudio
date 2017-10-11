@@ -121,6 +121,32 @@
 <section class="o-section">
     <div class="o-container">
         <h2 class="c-headline">Galeria</h2>
+
+        <div class="c-gallery owl-carousel owl-theme">
+            <?php if (have_rows('us_galeries')): ?>
+                <?php while(have_rows('us_galeries')):
+                    the_row();
+                    $title = get_sub_field('us_single_galery_title');
+                    $images = get_sub_field('us_single_galery');
+                    $url = $images[0]['url'];
+                ?>
+                    <div class="js-lightgallery">
+                        <?php foreach ($images as $index => $image): ?>
+                            <?php if ($index === 0): ?>
+                                <a href="<?= $image['url'] ?>" class="c-gallery__item">
+                                    <div class="c-gallery__item-img" style="background-image: url('<?= $image['url'] ?>')"></div>
+                                    <p class="c-gallery__item-title"><?= $title ?></p>
+                                </a>
+                            <?php else: ?>
+                                <a href="<?= $image['url'] ?>" style="display: none">
+                                    <img src="<?= $image['url'] ?>" alt="">
+                                </a>
+                            <?php endif; ?>
+
+                        <?php endforeach; ?>
+                    </div>
+            <?php endwhile; endif; ?>
+        </div>
     </div>
 </section>
 

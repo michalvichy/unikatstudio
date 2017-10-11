@@ -75,7 +75,6 @@ window.US.common = function($) {
     var $tabs = $('.js-tab');
 
     $tabs.each(function(index, tab) {
-      console.log(tab);
       var $tabItems = $(tab).find('.js-tab-item');
       var $tabTargets = $(tab).find('.js-tab-target');
 
@@ -91,7 +90,29 @@ window.US.common = function($) {
     });
   }
 
+  function galleries() {
+    console.log('asdfg');
+    $('.owl-carousel').owlCarousel({
+        dots: true,
+        margin: 20,
+        mouseDrag: false,
+    });
+  }
+
+    function lightgalleryInit() {
+        $('.js-lightgallery').lightGallery({
+            mode: 'lg-fade',
+            cssEasing: 'ease-out',
+            thumbnail: true,
+            toogleThumb: false,
+            thumbMargin: 15,
+        });
+    }
+
+
   $(document).ready(function() {
     tabs();
+    galleries();
+    lightgalleryInit();
   });
 };

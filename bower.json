@@ -8,9 +8,16 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.2.1",
-    "csswizardry-grids": "~2.2.0"
+    "csswizardry-grids": "~2.2.0",
+    "owl.carousel": "^2.2.1",
+    "lightgallery": "~1.3.7"
   },
   "overrides": {
-
+    "owl-carousel": {
+      "main": "dist/owl.carousel.js"
+    },
+    "lightgallery": {
+      "main": "dist/js/lightgallery.js"
+    }
   }
 }

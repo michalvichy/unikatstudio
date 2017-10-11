@@ -4,8 +4,9 @@
   height: 510px;
   background: {
     image: url('../images/banner.jpg');
-    position: center;
+    position: top center;
     repeat: no-repeat;
-    size: cover;
+    size: contain;
+    attachment: fixed;
   };
 }

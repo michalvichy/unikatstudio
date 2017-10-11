@@ -11,6 +11,9 @@
 // Vendors
 @import 'media-queries';
 @import 'csswizardry-grids';
+@import '../../bower_components/owl.carousel/dist/assets/owl.carousel.css';
+@import '../../bower_components/owl.carousel/dist/assets/owl.theme.default.css';
+
 
 
 // Global styles
@@ -26,6 +29,7 @@
 @import 'components/buttons';
 @import 'components/employees';
 @import 'components/footer';
+@import 'components/gallery';
 @import 'components/header';
 @import 'components/headlines';
 @import 'components/paragraphs';
