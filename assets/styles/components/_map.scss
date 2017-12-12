@@ -1,0 +1,7 @@
+// Map styles
+// ----------
+.c-map {
+  @include min-screen($desktop) {
+    height: 390px;
+  }
+}

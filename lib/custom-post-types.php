@@ -42,7 +42,7 @@
         /**
          * Register a gallery post type.
          */
-       $labels_services = array(
+        $labels_services = array(
            'name'               => 'Usługi',
            'singular_name'      => 'Usługa',
            'menu_name'          => 'Usługi',
@@ -57,9 +57,9 @@
            'parent_item_colon'  => 'Nadrzędna usługa:',
            'not_found'          => 'Nie znaleziono usługi',
            'not_found_in_trash' => 'Nie znaleziono usługi w koszu'
-       );
+        );
 
-       $args = array(
+        $args = array(
            'labels'             => $labels_services,
            'public'             => true,
            'publicly_queryable' => true,
@@ -72,8 +72,8 @@
            'menu_position'      => null,
            'supports'           => array('title', 'editor'),
            'menu_icon'          => 'dashicons-awards'
-       );
+        );
 
-       register_post_type( 'unikat_services', $args );
+        register_post_type( 'unikat_services', $args );
     }
 ?>

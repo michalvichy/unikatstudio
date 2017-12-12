@@ -25,3 +25,15 @@
   font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   text-align: center;
 }
+
+.owl-dot {
+  span {
+    background-color: $text-color-light !important;
+  }
+
+  &.active {
+    span {
+      background-color: $color-secondary !important;
+    }
+  }
+}

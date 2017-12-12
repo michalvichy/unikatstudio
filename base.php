@@ -34,6 +34,7 @@ use Roots\Sage\Wrapper;
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
-    ?>
+      ?>
+      <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.5/dist/js/lightgallery.min.js"></script>
   </body>
 </html>

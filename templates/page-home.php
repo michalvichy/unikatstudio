@@ -156,7 +156,7 @@
     <?php $inspirations = get_field('us_inspirations'); ?>
 
     <div class="js-inspirations owl-carousel owl-theme">
-        <?php if( $images ): ?>
+        <?php if( $inspirations ): ?>
             <?php foreach( $inspirations as $inspiration ): ?>
                 <div class="c-inspiration">
                     <img src="<?= $inspiration['url'] ?>" alt="">
@@ -169,12 +169,34 @@
 <section class="o-section">
     <div class="o-container">
         <h2 class="c-headline">Certyfikaty</h2>
+        <?php $certificates = get_field('us_certificates'); ?>
+
+
+        <div class="c-certificates js-certificates owl-carousel owl-theme owl-lazy">
+            <?php if( $certificates ): ?>
+                <?php foreach( $certificates as $certificate ): ?>
+                    <img data-src="<?= $certificate['url'] ?>" alt="certyfikat" class="owl-lazy js-certificate-img">
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+
     </div>
 </section>
 
 <section class="o-section o-section--creame">
     <div class="o-container">
         <h2 class="c-headline">Partnerzy</h2>
+        <div class="grid grid--middle">
+            <div class="grid__item tab--one-third">
+                <img src="<?= get_template_directory_uri() ?>/dist/images/logo-goldwell.png" alt="goldwell">
+            </div><!--
+            --><div class="grid__item tab--one-third">
+                <img src="<?= get_template_directory_uri() ?>/dist/images/logo-nahh.jpg" alt="nah">
+            </div><!--
+            --><div class="grid__item tab--one-third">
+                <img src="<?= get_template_directory_uri() ?>/dist/images/logo-ka.png" alt="ka">
+            </div>
+        </div>
     </div>
 </section>
 
@@ -206,7 +228,7 @@
                 </div>
             </div><!--
             --><div class="grid__item desk--three-quarters">
-                <div id="map"></div>
+                <div id="map" class="c-map"></div>
             </div>
         </div>
     </div>

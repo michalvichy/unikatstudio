@@ -1,6 +1,10 @@
 window.US = window.US || {};
 
 window.US.common = function($) {
+  var MAP_KEY = 'AIzaSyC4mLQ31-FT-AmiEe2SzT-9F_ljg3bjXmQ';
+  var MAP_STYLES = [{"featureType":"administrative","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"simplified"}]},{"featureType":"road","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","stylers":[{"visibility":"simplified"}]},{"featureType":"landscape","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#84afa3"},{"lightness":52}]},{"stylers":[{"saturation":-77}]},{"featureType":"road"}];
+  var MAP_MARKER = 'https://mapkit.io/images/legacy/solid-pin-black.png';
+
   function goToTopButton() {
     var $button = $('.js-to-top');
 
@@ -100,25 +104,68 @@ window.US.common = function($) {
 
     $('.js-inspirations').owlCarousel({
         items: 1,
-        nav: true,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        loop: true,
+        autoplaySpeed: 600,
+        animateOut: 'fadeOut',
+    });
+
+    $('.js-certificates').owlCarousel({
+        items: 4,
+        nav: false,
         dots: true,
+        margin: 15,
+        lazyLoad: true,
+        itemElement: 'a',
+        stageClass: 'owl-stage js-lightgallery',
+        onInitialized: function() {
+          var $certificates = $('.js-certificate-img');
+          var $imgLinks = $('.js-lightgallery > .owl-item');
+
+          $imgLinks.each(function(index, link) {
+            $(link).attr('href', $($certificates[index]).data('src'));
+          });
+        }
     });
   }
 
-    function lightgalleryInit() {
-        $('.js-lightgallery').lightGallery({
-            mode: 'lg-fade',
-            cssEasing: 'ease-out',
-            thumbnail: true,
-            toogleThumb: false,
-            thumbMargin: 15,
-        });
-    }
+  function lightgalleryInit() {
+    $('.js-lightgallery').lightGallery({
+      mode: 'lg-fade',
+      cssEasing: 'ease-out',
+      thumbnail: true,
+      toogleThumb: false,
+      thumbMargin: 15,
+    });
+  }
+
+  function initMap() {
+    var center = {
+      lat : 50.2778469,
+      lng : 19.00745
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      disableDefaultUI: true,
+      center: center,
+      styles: MAP_STYLES,
+      zoom: 17
+    });
+
+    var marker = new google.maps.Marker({
+      map: map,
+      position: center,
+      icon: MAP_MARKER,
+    });
+  }
 
 
   $(document).ready(function() {
     tabs();
     galleries();
     lightgalleryInit();
+    $.getScript('https://maps.googleapis.com/maps/api/js?key=' + MAP_KEY, initMap);
   });
 };

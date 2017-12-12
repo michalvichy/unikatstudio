@@ -13,7 +13,7 @@
       "main": true
     },
     "vendor.js": {
-      "bower": ["jquery"]
+      "bower": ["jquery", "lightgallery"]
     }
   },
   "config": {
