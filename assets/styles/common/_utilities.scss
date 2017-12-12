@@ -16,6 +16,10 @@
   text-decoration: underline;
 }
 
+.u--text-secondary {
+  color: $color-secondary;
+}
+
 .u--clear-fix {
   &::after {
     content: '';

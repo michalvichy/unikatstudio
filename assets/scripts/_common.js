@@ -91,11 +91,17 @@ window.US.common = function($) {
   }
 
   function galleries() {
-    console.log('asdfg');
-    $('.owl-carousel').owlCarousel({
+    $('.js-gallery').owlCarousel({
         dots: true,
         margin: 20,
         mouseDrag: false,
+        nav: true,
+    });
+
+    $('.js-inspirations').owlCarousel({
+        items: 1,
+        nav: true,
+        dots: true,
     });
   }
 

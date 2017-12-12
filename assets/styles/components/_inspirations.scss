@@ -1,0 +1,29 @@
+// Inspirations
+// -------------
+.c-inspirations {
+  position: relative;
+}
+
+.c-inspirations__title {
+  @include horizontal-align;
+  top: 0;
+  min-width: 400px;
+  padding: 20px;
+  border-radius: 0 0 2px 2px;
+  background-color: $color-secondary;
+  color: $white;
+  font-family: 'Bebas';
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.c-inspiration {
+  max-height: 80vh;
+  overflow: hidden;
+
+  img {
+
+  }
+}

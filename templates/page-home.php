@@ -122,7 +122,7 @@
     <div class="o-container">
         <h2 class="c-headline">Galeria</h2>
 
-        <div class="c-gallery owl-carousel owl-theme">
+        <div class="c-gallery js-gallery owl-carousel owl-theme">
             <?php if (have_rows('us_galeries')): ?>
                 <?php while(have_rows('us_galeries')):
                     the_row();
@@ -151,6 +151,26 @@
 </section>
 
 <!--sekcja inspiracji. inna-->
+<section class="c-inspirations">
+    <div class="c-inspirations__title">Inspiracje</div>
+    <?php $inspirations = get_field('us_inspirations'); ?>
+
+    <div class="js-inspirations owl-carousel owl-theme">
+        <?php if( $images ): ?>
+            <?php foreach( $inspirations as $inspiration ): ?>
+                <div class="c-inspiration">
+                    <img src="<?= $inspiration['url'] ?>" alt="">
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</section>
+
+<section class="o-section">
+    <div class="o-container">
+        <h2 class="c-headline">Certyfikaty</h2>
+    </div>
+</section>
 
 <section class="o-section o-section--creame">
     <div class="o-container">
@@ -161,6 +181,34 @@
 <section class="o-section o-section--dark">
     <div class="o-container">
         <h2 class="c-headline c-headline--white">Kontakt</h2>
+
+        <div class="grid">
+            <div class="grid__item desk--one-quarter">
+                <div class="c-contact__info">
+                    <div class="c-contact__info-head">Adres</div>
+                    <div class="c-contact__info-text">
+                        40-224 Katowice<br>
+                        ul. Krzyżowa 9
+                    </div>
+                    <div class="c-contact__info-head">Kontakt</div>
+                    <div class="c-contact__info-text">
+                        <a href="tel:322043291">32 204 32 91</a><br>
+                        <a href="tel:601510272">601 510 272</a><br>
+                        <a href="email:bmdbro@wp.pl" class="u--text-secondary">bmdbro@wp.pl</a>
+                    </div>
+                    <div class="c-contact__info-head">Godziny otwarcia</div>
+                    <div class="c-contact__info-text">
+                        wtorek - czwartek 10.00-18.00<br>
+                        piątki 10.00-20.00<br>
+                        soboty 8.00-15.00<br>
+                        w poniedziałki nieczynne.
+                    </div>
+                </div>
+            </div><!--
+            --><div class="grid__item desk--three-quarters">
+                <div id="map"></div>
+            </div>
+        </div>
     </div>
 </section>
 
