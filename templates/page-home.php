@@ -1,5 +1,7 @@
+<div id="start" class="c-anchor"></div>
 <div class="c-banner"></div>
 
+<div id="about" class="c-anchor"></div>
 <section class="o-section o-section--bottom-border">
     <div class="o-container">
         <h1 class="c-headline">O nas</h1>
@@ -22,6 +24,7 @@
     </div>
 </section>
 
+<div id="employes" class="c-anchor"></div>
 <section class="o-section">
     <div class="o-container">
         <h2 class="c-headline">Pracownicy</h2>
@@ -69,6 +72,7 @@
     </div>
 </section>
 
+<div id="services" class="c-anchor"></div>
 <section class="o-section o-section--dark">
     <div class="o-container">
         <h2 class="c-headline c-headline--white">Usługi</h2>
@@ -118,6 +122,7 @@
     </div>
 </section>
 
+<div id="gallery" class="c-anchor"></div>
 <section class="o-section">
     <div class="o-container">
         <h2 class="c-headline">Galeria</h2>
@@ -151,6 +156,7 @@
 </section>
 
 <!--sekcja inspiracji. inna-->
+<div id="inspirations" class="c-anchor"></div>
 <section class="c-inspirations">
     <div class="c-inspirations__title">Inspiracje</div>
     <?php $inspirations = get_field('us_inspirations'); ?>
@@ -166,6 +172,7 @@
     </div>
 </section>
 
+<div id="certificates" class="c-anchor"></div>
 <section class="o-section">
     <div class="o-container">
         <h2 class="c-headline">Certyfikaty</h2>
@@ -183,6 +190,7 @@
     </div>
 </section>
 
+<div id="partners" class="c-anchor"></div>
 <section class="o-section o-section--creame">
     <div class="o-container">
         <h2 class="c-headline">Partnerzy</h2>
@@ -200,6 +208,7 @@
     </div>
 </section>
 
+<div id="contact" class="c-anchor"></div>
 <section class="o-section o-section--dark">
     <div class="o-container">
         <h2 class="c-headline c-headline--white">Kontakt</h2>

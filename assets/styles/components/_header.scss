@@ -21,7 +21,29 @@
 
 .c-nav__link {
   display: block;
+  position: relative;
   margin: 0 5px;
   padding: 5px 10px;
   text-decoration: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background-color: $color-secondary;
+    transition: all 250ms ease;
+    will-change: right left;
+  }
+
+  @include min-screen($desktop) {
+    &:hover {
+       &::before {
+         right: 0;
+         left: 0;
+       }
+    }
+  }
 }

@@ -18,7 +18,7 @@
                         <a class="c-nav__link" href="#employes">Pracownicy</a>
                     </li>
                     <li class="c-nav__item">
-                        <a class="c-nav__link" href="#service">Usługi</a>
+                        <a class="c-nav__link" href="#services">Usługi</a>
                     </li>
                     <li class="c-nav__item">
                         <a class="c-nav__link" href="#gallery">Galeria</a>

@@ -18,6 +18,7 @@ var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
+const babel      = require('gulp-babel');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -85,6 +86,12 @@ var sassPaths = [
 //   .pipe(cssTasks('main.css')
 //   .pipe(gulp.dest(path.dist + 'styles'))
 // ```
+function babelPipe() {
+  return babel({
+    presets: ['env']
+  });
+}
+
 var cssTasks = function(filename) {
   return lazypipe()
     .pipe(function() {
@@ -134,6 +141,7 @@ var jsTasks = function(filename) {
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.init());
     })
+    .pipe(babelPipe)
     .pipe(concat, filename)
     .pipe(uglify, {
       compress: {

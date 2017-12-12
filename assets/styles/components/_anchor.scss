@@ -1,0 +1,11 @@
+// Anchor
+// -------
+.c-anchor {
+  height: 59px;
+  margin-top: -59px;
+
+  @include min-screen($desktop) {
+    height: 70px;
+    margin-top: -70px;
+  }
+}
